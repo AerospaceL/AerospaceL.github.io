@@ -1,14 +1,27 @@
-import { useState } from 'react'
-import img from '@/assets/login.png'
+import { useState } from "react"
+import { Button, ConfigProvider } from "antd"
+
+import Layout from "@/pages/Layout"
+import Home from "@/pages/Home"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>this is app</div>
-      <img src={img}></img>
-    </>
+    // <ConfigProvider
+    //   theme={{
+    //     components: {
+    //       Layout: {
+    //         // siderBg: "#f5f5f5",
+    //         headerBg: "#fff",
+    //       },
+    //       Menu: {
+    //         colorSplit: "#fff",
+    //       },
+    //     },
+    //   }}
+    // >
+    //   <Layout></Layout>
+    // </ConfigProvider>
+    <h1 className="text-3xl font-bold underline">Hello world!</h1>
   )
 }
 
