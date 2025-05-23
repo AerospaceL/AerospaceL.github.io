@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: lxgw wenkai, sans-serif;
+  /* font-family: lxgw wenkai regular, Roboto, lucida grande, lucida sans unicode,
+    lucida, helvetica, hiragino sans gb, microsoft yahei, wenquanyi micro hei,
+    sans-serif; */
+}
