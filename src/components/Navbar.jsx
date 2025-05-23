@@ -34,11 +34,22 @@ const Navbar = () => {
         <div>
           {/*  top-16 need to be same as Navbar */}
           <div
-            className={`w-full h-screen flex flex-col items-center justify-center absolute top-16 transition-all ease-in-out ${
+            className={`w-full h-screen flex flex-col items-center justify-center gap-8 text-lg absolute top-16 transition-all ease-in-out ${
               open ? "-right-0" : "-right-[100%]"
             }`}
           >
-            menu
+            <a href="/" className="hover:underline">
+              主页
+            </a>
+            <a href="/" className="hover:underline">
+              技术
+            </a>
+            <a href="/" className="hover:underline">
+              摄影
+            </a>
+            <a href="/" className="hover:underline">
+              关于
+            </a>
           </div>
         </div>
       </div>
@@ -53,6 +64,9 @@ const Navbar = () => {
         </a>
         <a href="/" className="hover:underline">
           摄影
+        </a>
+        <a href="/" className="hover:underline">
+          关于
         </a>
       </div>
     </div>
