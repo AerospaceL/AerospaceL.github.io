@@ -1,18 +1,25 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { getTestMdAPI } from "@/apis/article"
 
 const markdown = "# Hi你好, *Pluto*!"
 
 const Post = () => {
-  const [md, setMd] = useState("loading... ...")
-
+  const [md, setMd] = useState("文章加载中...")
+  // 用 useRef 标记防止重复执行
+  const hasFetched = useRef(false)
   useEffect(() => {
-    fetch("/test/test.md")
-      .then((resp) => resp.text())
-      .then((txt) => setMd(txt))
-  }, [md])
+    if (!hasFetched.current) {
+      const getTestMd = async () => {
+        const res = await getTestMdAPI()
+        setMd(res)
+      }
+      getTestMd()
+      hasFetched.current = true
+    }
+  }, []) // 空依赖数组
 
   return (
     <div>
