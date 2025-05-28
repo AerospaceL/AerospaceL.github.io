@@ -2,6 +2,26 @@ import logo from "@/assets/login.png"
 import GradientText from "@/styles/GradientText"
 import { useState } from "react"
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons"
+import { Link } from "react-router"
+
+const Links = () => {
+  return (
+    <>
+      <Link to="/" className="hover:underline">
+        主页
+      </Link>
+      <Link to="/tech" className="hover:underline">
+        技术
+      </Link>
+      <Link to="/photo" className="hover:underline">
+        摄影
+      </Link>
+      <Link to="/talk" className="hover:underline">
+        杂谈
+      </Link>
+    </>
+  )
+}
 
 const Navbar = () => {
   // the button of sidemenu
@@ -9,7 +29,7 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 flex items-center justify-between">
       {/* Logo */}
-      <div className="text-2xl">
+      <Link to="/" className="text-2xl">
         <GradientText
           colors={["yellow", "orange", "red"]}
           animationSpeed={8}
@@ -18,7 +38,7 @@ const Navbar = () => {
         >
           焦头烂码
         </GradientText>
-      </div>
+      </Link>
 
       {/* Mobile Menu */}
       <div className="md:hidden">
@@ -38,36 +58,14 @@ const Navbar = () => {
               open ? "-right-0" : "-right-[100%]"
             }`}
           >
-            <a href="/" className="hover:underline">
-              主页
-            </a>
-            <a href="/" className="hover:underline">
-              技术
-            </a>
-            <a href="/" className="hover:underline">
-              摄影
-            </a>
-            <a href="/" className="hover:underline">
-              关于
-            </a>
+            <Links />
           </div>
         </div>
       </div>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <a href="/" className="hover:underline">
-          主页
-        </a>
-        <a href="/" className="hover:underline">
-          技术
-        </a>
-        <a href="/" className="hover:underline">
-          摄影
-        </a>
-        <a href="/" className="hover:underline">
-          关于
-        </a>
+        <Links />
       </div>
     </div>
   )

@@ -1,4 +1,24 @@
 @tailwind base;
+@layer base {
+  h1 {
+    @apply text-3xl font-bold text-neutral-500 border-b;
+  }
+  h2 {
+    @apply text-2xl font-bold text-neutral-500;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-base;
+  }
+  h5 {
+    @apply text-sm;
+  }
+  h6 {
+    @apply text-xs;
+  }
+}
 @tailwind components;
 @tailwind utilities;
 
@@ -6,7 +26,4 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-family: lxgw wenkai, sans-serif;
-  /* font-family: lxgw wenkai regular, Roboto, lucida grande, lucida sans unicode,
-    lucida, helvetica, hiragino sans gb, microsoft yahei, wenquanyi micro hei,
-    sans-serif; */
 }
