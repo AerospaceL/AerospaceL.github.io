@@ -4,6 +4,7 @@ import Photo from "@/pages/Photo"
 import Post from "@/pages/Post"
 import PostList from "@/pages/PostList"
 import Talk from "@/pages/Talk"
+import Tech from "@/pages/Tech"
 import { createBrowserRouter, RouterProvider, Route, Link } from "react-router"
 
 const router = createBrowserRouter([
@@ -16,11 +17,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/tech",
-        element: <Post />,
+        element: <Tech />,
       },
       {
         path: "/photo",
-        element: <Photo />,
+        element: <Post />,
       },
       {
         path: "/talk",

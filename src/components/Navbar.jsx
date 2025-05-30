@@ -31,7 +31,8 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/" className="text-2xl">
         <GradientText
-          colors={["yellow", "orange", "red"]}
+          // colors={["#18545a", "#f1f2b5", "#18545a"]}
+          colors={["#1452a3", "#00b4d8", "#1452a3"]}
           animationSpeed={8}
           showBorder={false}
           className="custom-class"
