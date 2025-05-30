@@ -1,26 +1,29 @@
 import { useEffect } from "react"
+import { List } from "antd"
+import { format, parseISO } from "date-fns"
+import { Link } from "react-router"
 
 const PostList = ({ postList }) => {
   return (
     <div className="mt-6">
-      <div>List page.</div>
-      {/* <div>{postList}</div> */}
-      {/* <div>{postList.length}</div> */}
-      <div>
-        {postList.map((item) => (
-          <div key={item.post_id}>{item.title}</div>
-        ))}
-      </div>
+      <List
+        className="xl:px-24"
+        size="large"
+        dataSource={postList}
+        renderItem={(item) => (
+          <List.Item>
+            <Link to={`/tech/${item.slug}`} className="text-lg md:text-2xl">
+              {item.title}
+            </Link>
+            {/* <div className="text-lg md:text-2xl">{item.title}</div> */}
+            <div className="text-base">
+              {format(parseISO(item.created_at), "yyyy-MM-dd HH:mm")}
+            </div>
+          </List.Item>
+        )}
+      />
     </div>
   )
 }
-
-// {
-//   channelList.map((item) => (
-//     <Option key={item.id} value={item.id}>
-//       {item.name}
-//     </Option>
-//   ))
-// }
 
 export default PostList

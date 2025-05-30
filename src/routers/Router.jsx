@@ -20,6 +20,10 @@ const router = createBrowserRouter([
         element: <Tech />,
       },
       {
+        path: "/tech/:slug",
+        element: <Post />,
+      },
+      {
         path: "/photo",
         element: <Post />,
       },

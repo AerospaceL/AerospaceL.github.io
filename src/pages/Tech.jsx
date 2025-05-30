@@ -14,7 +14,7 @@ const Tech = () => {
         <div className="text-sm">共3篇文章/共1000个文字</div>
         <div className="border-b border-blue-400"></div>
       </div>
-
+      {/* 文章列表 */}
       <PostList postList={postList || []}></PostList>
     </div>
   )

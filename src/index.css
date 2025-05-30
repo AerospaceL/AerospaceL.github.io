@@ -27,3 +27,8 @@ body {
   overflow-x: hidden;
   font-family: lxgw wenkai, sans-serif;
 }
+
+.ant-list,
+.ant-tabs-tab {
+  font-family: var(--font-family) !important;
+}

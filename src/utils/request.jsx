@@ -8,7 +8,7 @@ import axios from "axios"
 const request = axios.create({
   baseURL:
     "https://2dqvkilf4lvtafthfodcppxgve0yxjci.lambda-url.us-east-1.on.aws",
-  timeout: 5000,
+  timeout: 10000,
 })
 
 // 响应拦截器: 在响应返回客户端之前 重点处理返回的数据
