@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import PostList from "./PostList"
-import { useFetchPostList } from "@/hooks/usePostList"
+import { useFetchPostList, useFetchTechPostList } from "@/hooks/usePostList"
 
 const Tech = () => {
-  const { data: postList, isLoading, error } = useFetchPostList()
+  const { data: postList, isLoading, error } = useFetchTechPostList()
 
   return (
     <div className="lg:px-16 mt-6">

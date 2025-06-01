@@ -1,11 +1,24 @@
 import { useQuery } from "@tanstack/react-query"
-import { fetchPostListFromDB } from "@/apis/postListQuery"
+import {
+  fetchPostListFromDB,
+  fetchTechPostListFromDB,
+} from "@/apis/postListQuery"
+
+const defaultStaleTime = 5 * 60 * 1000 // 5分钟缓存
+const defaultCacheTime = 30 * 60 * 1000 // 30分钟保留缓存
 
 const useFetchPostList = () => {
-  return useQuery(["posts"], fetchPostListFromDB, {
-    staleTime: 5 * 60 * 1000, // 5分钟缓存
-    cacheTime: 30 * 60 * 1000, // 30分钟保留缓存
+  return useQuery(["postList"], fetchPostListFromDB, {
+    staleTime: defaultStaleTime,
+    cacheTime: defaultCacheTime,
   })
 }
 
-export { useFetchPostList }
+const useFetchTechPostList = () => {
+  return useQuery(["techPostList"], fetchTechPostListFromDB, {
+    staleTime: defaultStaleTime,
+    cacheTime: defaultCacheTime,
+  })
+}
+
+export { useFetchPostList, useFetchTechPostList }
