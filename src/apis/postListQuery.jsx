@@ -25,4 +25,23 @@ const fetchTechPostListFromDB = async () => {
   return data
 }
 
-export { fetchPostListFromDB, fetchTechPostListFromDB }
+const fetchPostListByCategoryFromDB = async (category) => {
+  let postListCategory = 0
+  if (category === "tech") postListCategory = categoryTech
+  else if (category == "photo") postListCategory = categoryPhoto
+  else if (category == "talk") postListCategory = categoryTalk
+
+  const { data, error } = await supabase
+    .from("posts")
+    .select()
+    .eq("category", postListCategory)
+  if (error) throw new Error(error.message)
+  console.log(data)
+  return data
+}
+
+export {
+  fetchPostListFromDB,
+  fetchTechPostListFromDB,
+  fetchPostListByCategoryFromDB,
+}

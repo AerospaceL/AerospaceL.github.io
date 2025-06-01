@@ -8,6 +8,7 @@ import axios from "axios"
 const request = axios.create({
   baseURL:
     "https://2dqvkilf4lvtafthfodcppxgve0yxjci.lambda-url.us-east-1.on.aws",
+  // "https://k2htw8w4yd.execute-api.us-east-1.amazonaws.com/http-function-url-tutorial-2",
   timeout: 10000,
 })
 

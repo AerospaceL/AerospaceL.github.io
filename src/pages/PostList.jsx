@@ -3,7 +3,7 @@ import { List } from "antd"
 import { format, parseISO } from "date-fns"
 import { Link } from "react-router"
 
-const PostList = ({ postList }) => {
+const PostList = ({ postList, category }) => {
   return (
     <div className="mt-6">
       <List
@@ -12,7 +12,10 @@ const PostList = ({ postList }) => {
         dataSource={postList}
         renderItem={(item) => (
           <List.Item>
-            <Link to={`/tech/${item.slug}`} className="text-lg md:text-2xl">
+            <Link
+              to={`/${category}/${item.slug}`}
+              className="text-lg md:text-2xl md:font-bold"
+            >
               {item.title}
             </Link>
             {/* <div className="text-lg md:text-2xl">{item.title}</div> */}

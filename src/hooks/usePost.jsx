@@ -1,5 +1,15 @@
 import { useQuery } from "@tanstack/react-query"
-import { getTestMdAPI } from "@/apis/postQuery"
+import { getPostByKeyAPI, getTestMdAPI } from "@/apis/postQuery"
+
+const usePost = (key) => {
+  return useQuery({
+    queryKey: ["post", key],
+    queryFn: () => getPostByKeyAPI(key),
+    staleTime: 12 * 60 * 60 * 1000, // 12小时缓存
+    cacheTime: 24 * 60 * 60 * 1000, // 24小时保留缓存
+    enabled: !!key,
+  })
+}
 
 const usePostTest = (slug) => {
   return useQuery({
@@ -11,4 +21,4 @@ const usePostTest = (slug) => {
   })
 }
 
-export { usePostTest }
+export { usePostTest, usePost }

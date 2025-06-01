@@ -20,12 +20,12 @@ const router = createBrowserRouter([
         element: <Tech />,
       },
       {
-        path: "/tech/:slug",
+        path: "/:category/:slug",
         element: <Post />,
       },
       {
         path: "/photo",
-        element: <Post />,
+        element: <Photo />,
       },
       {
         path: "/talk",
