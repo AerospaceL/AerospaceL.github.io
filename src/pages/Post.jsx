@@ -2,24 +2,33 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
 import { useState, useEffect, useRef } from "react"
-import { getTestMdAPI } from "@/apis/article"
+import { getTestMdAPI } from "@/apis/postQuery"
+import { useArticleTest } from "@/hooks/usePost"
+import { useParams } from "react-router"
 
 const markdown = "# Hi你好, *Pluto*!"
 
 const Post = () => {
-  const [md, setMd] = useState("文章加载中...")
-  // 用 useRef 标记防止重复执行
-  const hasFetched = useRef(false)
+  const { slug } = useParams()
+  const { data: md, isLoading, error } = useArticleTest(slug)
+
   useEffect(() => {
-    if (!hasFetched.current) {
-      const getTestMd = async () => {
-        const res = await getTestMdAPI()
-        setMd(res)
-      }
-      getTestMd()
-      hasFetched.current = true
-    }
-  }, []) // 空依赖数组
+    console.log(slug)
+  }, [slug])
+
+  // const [md, setMd] = useState("文章加载中...")
+  // // 用 useRef 标记防止重复执行
+  // const hasFetched = useRef(false)
+  // useEffect(() => {
+  //   if (!hasFetched.current) {
+  //     const getTestMd = async () => {
+  //       const res = await getTestMdAPI()
+  //       setMd(res)
+  //     }
+  //     getTestMd()
+  //     hasFetched.current = true
+  //   }
+  // }, []) // 空依赖数组
 
   return (
     <div>
