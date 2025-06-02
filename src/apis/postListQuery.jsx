@@ -21,7 +21,7 @@ const fetchTechPostListFromDB = async () => {
     .select()
     .eq("category", categoryTech)
   if (error) throw new Error(error.message)
-  console.log(data)
+  // console.log(data)
   return data
 }
 
@@ -36,7 +36,23 @@ const fetchPostListByCategoryFromDB = async (category) => {
     .select()
     .eq("category", postListCategory)
   if (error) throw new Error(error.message)
-  console.log(data)
+  // console.log(data)
+  return data
+}
+
+const fetchPostInfoFromDB = async (category, slug) => {
+  let postCategory = 0
+  if (category === "tech") postCategory = categoryTech
+  else if (category == "photo") postCategory = categoryPhoto
+  else if (category == "talk") postCategory = categoryTalk
+
+  const { data, error } = await supabase
+    .from("posts")
+    .select()
+    .eq("category", postCategory)
+    .eq("slug", slug)
+  if (error) throw new Error(error.message)
+  // console.log(data)
   return data
 }
 
@@ -44,4 +60,5 @@ export {
   fetchPostListFromDB,
   fetchTechPostListFromDB,
   fetchPostListByCategoryFromDB,
+  fetchPostInfoFromDB,
 }

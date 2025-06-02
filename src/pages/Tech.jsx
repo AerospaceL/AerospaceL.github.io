@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import PostList from "./PostList"
 import { useFetchPostListByCategory } from "@/hooks/usePostList"
+import { Spin } from "antd"
 
 const Tech = () => {
   const {
@@ -24,7 +25,13 @@ const Tech = () => {
         <div className="border-b border-blue-400"></div>
       </div>
       {/* 文章列表 */}
-      <PostList postList={postList || []} category={"tech"}></PostList>
+      {isLoading ? (
+        <div className="mt-8 flex flex-grow justify-center">
+          <Spin></Spin>
+        </div>
+      ) : (
+        <PostList postList={postList || []} category={"tech"}></PostList>
+      )}
     </div>
   )
 }

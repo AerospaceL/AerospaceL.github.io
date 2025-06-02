@@ -10,7 +10,7 @@ export function getPostByKeyAPI(key) {
 
 // 2. 获取测试文章
 export function getTestMdAPI(slug) {
-  console.log("getTESTAPI" + slug)
+  // console.log("getTESTAPI" + slug)
 
   return request({
     url: "/",

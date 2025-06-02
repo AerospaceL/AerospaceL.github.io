@@ -1,5 +1,6 @@
 import PostList from "./PostList"
 import { useFetchPostListByCategory } from "@/hooks/usePostList"
+import { Spin } from "antd"
 
 const Photo = () => {
   const {
@@ -23,7 +24,13 @@ const Photo = () => {
         <div className="border-b border-blue-400"></div>
       </div>
       {/* 文章列表 */}
-      <PostList postList={postList || []} category={"photo"}></PostList>
+      {isLoading ? (
+        <div className="mt-8 flex flex-grow justify-center">
+          <Spin></Spin>
+        </div>
+      ) : (
+        <PostList postList={postList || []} category={"photo"}></PostList>
+      )}
     </div>
   )
 }

@@ -3,6 +3,7 @@ import {
   fetchPostListFromDB,
   fetchTechPostListFromDB,
   fetchPostListByCategoryFromDB,
+  fetchPostInfoFromDB,
 } from "@/apis/postListQuery"
 
 const defaultStaleTime = 5 * 60 * 1000 // 5分钟缓存
@@ -31,4 +32,18 @@ const useFetchPostListByCategory = (category) => {
   })
 }
 
-export { useFetchPostList, useFetchTechPostList, useFetchPostListByCategory }
+const useFetchOnePostInfo = (category, slug) => {
+  return useQuery({
+    queryKey: ["PostInfo", category, slug],
+    queryFn: () => fetchPostInfoFromDB(category, slug),
+    staleTime: defaultStaleTime,
+    cacheTime: defaultCacheTime,
+  })
+}
+
+export {
+  useFetchPostList,
+  useFetchTechPostList,
+  useFetchPostListByCategory,
+  useFetchOnePostInfo,
+}

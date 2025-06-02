@@ -10,13 +10,13 @@ const Links = () => {
       <Link to="/" className="hover:underline">
         主页
       </Link>
-      <Link to="/tech" className="hover:underline">
+      <Link to="/tech" className="text-blue-500 hover:underline">
         技术
       </Link>
-      <Link to="/photo" className="hover:underline">
+      <Link to="/photo" className="text-yellow-400 hover:underline">
         摄影
       </Link>
-      <Link to="/talk" className="hover:underline">
+      <Link to="/talk" className="text-green-500 hover:underline">
         杂谈
       </Link>
     </>
@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 flex items-center justify-between">
       {/* Logo */}
-      <Link to="/" className="text-2xl">
+      <Link to="/" className="text-xl font-bold">
         <GradientText
           // colors={["#18545a", "#f1f2b5", "#18545a"]}
           colors={["#1452a3", "#00b4d8", "#1452a3"]}
@@ -65,7 +65,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
+      <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium font-bold">
         <Links />
       </div>
     </div>
