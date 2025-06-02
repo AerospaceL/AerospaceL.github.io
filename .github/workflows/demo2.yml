@@ -10,6 +10,8 @@
    # 开始打包
    Build:
      runs-on: ubuntu-latest
+     permissions:
+      contents: write
      steps:
      - name: checkout code
        # 迁出触发的流程的版本 能让下面的工作流程访问
