@@ -1,4 +1,3 @@
-import logo from "@/assets/login.png"
 import GradientText from "@/styles/GradientText"
 import { useState } from "react"
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons"
