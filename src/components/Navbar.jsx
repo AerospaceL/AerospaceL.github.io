@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium font-bold">
+      <div className="hidden md:flex items-center gap-8 xl:gap-12 font-bold">
         <Links />
       </div>
     </div>
