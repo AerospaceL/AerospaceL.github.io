@@ -30,10 +30,6 @@ const router = createBrowserRouter([
         path: "/talk",
         element: <Talk />,
       },
-      {
-        path: "/:slug",
-        element: <Post />,
-      },
     ],
   },
 ])
