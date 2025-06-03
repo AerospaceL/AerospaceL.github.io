@@ -3,7 +3,7 @@ import { useState } from "react"
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons"
 import { Link } from "react-router"
 
-const Links = () => {
+const Links = ({ open, setOpen }) => {
   return (
     <>
       <Link to="/" onClick={() => setOpen(false)} className="hover:underline">
@@ -70,14 +70,14 @@ const Navbar = () => {
               open ? "-right-0" : "-right-[100%]"
             }`}
           >
-            <Links />
+            <Links open={open} setOpen={setOpen} />
           </div>
         </div>
       </div>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-bold">
-        <Links />
+        <Links open={open} setOpen={setOpen} />
       </div>
     </div>
   )
