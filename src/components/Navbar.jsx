@@ -6,16 +6,28 @@ import { Link } from "react-router"
 const Links = () => {
   return (
     <>
-      <Link to="/" className="hover:underline">
+      <Link to="/" onClick={() => setOpen(false)} className="hover:underline">
         主页
       </Link>
-      <Link to="/tech" className="text-blue-500 hover:underline">
+      <Link
+        to="/tech"
+        onClick={() => setOpen(false)}
+        className="text-blue-500 hover:underline"
+      >
         技术
       </Link>
-      <Link to="/photo" className="text-yellow-400 hover:underline">
+      <Link
+        to="/photo"
+        onClick={() => setOpen(false)}
+        className="text-yellow-400 hover:underline"
+      >
         摄影
       </Link>
-      <Link to="/talk" className="text-green-500 hover:underline">
+      <Link
+        to="/talk"
+        onClick={() => setOpen(false)}
+        className="text-green-500 hover:underline"
+      >
         杂谈
       </Link>
     </>
@@ -54,7 +66,7 @@ const Navbar = () => {
         <div>
           {/*  top-16 need to be same as Navbar */}
           <div
-            className={`w-full h-screen flex flex-col items-center justify-center gap-8 text-lg absolute top-16 transition-all ease-in-out ${
+            className={`z-10 w-full h-screen flex flex-col items-center justify-center gap-8 text-lg absolute top-16 transition-all bg-white ease-in-out ${
               open ? "-right-0" : "-right-[100%]"
             }`}
           >
