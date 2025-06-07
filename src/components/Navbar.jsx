@@ -66,8 +66,8 @@ const Navbar = () => {
         <div>
           {/*  top-16 need to be same as Navbar */}
           <div
-            className={`z-10 w-full h-screen flex flex-col items-center justify-center gap-8 text-lg absolute top-16 transition-all bg-white ease-in-out ${
-              open ? "-right-0" : "-right-[100%]"
+            className={`z-10  w-full h-screen flex flex-col items-center justify-center gap-8 text-lg absolute top-16 transition-all  bg-white ease-in-out ${
+              open ? "-right-0" : "visibility: hidden"
             }`}
           >
             <Links open={open} setOpen={setOpen} />
